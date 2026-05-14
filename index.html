@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شبكه الهاشمي سوفت - الذكاء التقني </title>
+    <title>شبكة الهاشمي♡ - نظام الحماية المطور</title>
     <style>
         :root { --accent: #ffb700; --glass: rgba(255, 255, 255, 0.1); }
         body {
@@ -15,7 +15,7 @@
             background: var(--glass); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 40px;
             padding: 50px 30px; width: 90%; max-width: 400px; text-align: center;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5); position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
         h1 { font-size: 2.8rem; color: #fff; margin: 0; text-shadow: 0 0 15px var(--accent); }
         input {
@@ -29,7 +29,7 @@
         }
         .overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95); display: none; flex-direction: column;
+            background: #000; display: none; flex-direction: column;
             justify-content: center; align-items: center; z-index: 1000;
         }
         .pop-card {
@@ -38,22 +38,26 @@
         }
         .earth-fast { font-size: 100px; animation: fastSpin 0.5s linear infinite; margin-bottom: 20px; }
         @keyframes fastSpin { 100% { transform: rotate(360deg); } }
+        .quran-text { color: #fff; margin-top: 25px; font-size: 0.9rem; opacity: 0.9; line-height: 1.6; }
     </style>
 </head>
 <body>
 
-    <div class="glass-panel">
+    <div class="glass-panel" id="mainUI">
         <h1>شبكة الهاشمي</h1>
         <input type="text" id="cardInput" placeholder="أدخل الكرت" inputmode="numeric">
         <button class="btn-action" onclick="checkCard()">دخول النظام</button>
-        <p style="color: #fff; margin-top: 25px; opacity: 0.8;">﴿وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا﴾</p>
+        <div class="quran-text">
+            <div>﴿وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا﴾</div>
+            <div style="color: var(--accent); font-weight: bold; margin-top: 5px;">اتقِ الله واجعل الانترنت وسيلة استفادة</div>
+        </div>
     </div>
 
     <div id="successBox" class="overlay">
         <div class="pop-card">
             <div class="earth-fast">🌍</div>
             <h2 style="color: var(--accent);">تم تسجيل الدخول بنجاح</h2>
-            <p style="color: #fff;">نتمنى لكم وقتاً ممتعاً 🌹✨</p>
+            <p style="color: #fff;">نتمنى لكم وقتاً ممتعاً 😍🌹✨</p>
         </div>
     </div>
 
@@ -72,14 +76,14 @@
             const errorBox = document.getElementById('errorBox');
 
             if(val === "225588") {
-                // 1. إظهار شاشة النجاح والكرة الأرضية
                 successBox.style.display = 'flex';
                 
-                // 2. الانتظار لمدة 4 ثوانٍ (4000 ميلي ثانية) ثم الإخفاء
+                // بعد 4 ثواني سيتم "تصفير" الصفحة تماماً لتبدو كأنها أغلقت
                 setTimeout(() => {
-                    successBox.style.display = 'none';
-                    // اختياري: مسح الخانة بعد النجاح
-                    document.getElementById('cardInput').value = '';
+                    // محاولة إغلاق النافذة (تعمل في بعض المتصفحات)
+                    window.close();
+                    // كخيار احتياطي أقوى: مسح محتوى الصفحة تماماً وتحويلها لشاشة سوداء
+                    document.body.innerHTML = "<div style='background:#000; height:100vh; width:100vw;'></div>";
                 }, 4000);
 
             } else {
@@ -90,3 +94,4 @@
 </body>
 </html>
 
+ 
