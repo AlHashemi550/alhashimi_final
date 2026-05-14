@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL-HASHIMI CYBER</title>
+    <style>
+        body { margin: 0; background: #050505; color: #00f2ff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+        .card { border: 2px solid #00f2ff; padding: 40px; border-radius: 25px; background: rgba(0,242,255,0.05); box-shadow: 0 0 30px #00f2ff; text-align: center; width: 85%; max-width: 380px; }
+        h1 { font-size: 2.5rem; text-shadow: 0 0 10px #00f2ff; margin: 0; }
+        input { width: 100%; padding: 15px; margin: 25px 0; background: #000; border: 1px solid #00f2ff; color: #fff; text-align: center; font-size: 1.5rem; border-radius: 10px; outline: none; }
+        .btn { width: 100%; padding: 15px; background: #00f2ff; color: #000; border: none; font-weight: bold; cursor: pointer; border-radius: 10px; font-size: 1.1rem; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; }
+        .earth { font-size: 100px; animation: spin 1s linear infinite; }
+        @keyframes spin { 100% { transform: rotateY(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>الهاشمي سوفت</h1>
+        <input type="text" id="c" placeholder="كود الكرت" inputmode="numeric">
+        <button class="btn" onclick="v()">دخول</button>
+    </div>
+    <div id="s" class="overlay"><div class="earth">🌍</div><h2 style="color:#00f2ff">تم الاتصال بنجاح</h2></div>
+    <div id="e" class="overlay" onclick="this.style.display='none'"><h2 style="color:#ff0055">❌ الكرت خطأ</h2><p>اضغط للعودة</p></div>
+    <script>
+        function v(){
+            var x=document.getElementById('c').value;
+            if(x==="225588"){document.getElementById('s').style.display='flex';}
+            else{document.getElementById('e').style.display='flex';}
+        }
+    </script>
+</body>
+</html>
+
