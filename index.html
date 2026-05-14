@@ -1,33 +1,92 @@
-<!DOCTYPE html>
+<!<!<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AL-HASHIMI CYBER</title>
+    <title>الهاشمي سوفت - المستقبل بين يديك</title>
     <style>
-        body { margin: 0; background: #050505; color: #00f2ff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
-        .card { border: 2px solid #00f2ff; padding: 40px; border-radius: 25px; background: rgba(0,242,255,0.05); box-shadow: 0 0 30px #00f2ff; text-align: center; width: 85%; max-width: 380px; }
-        h1 { font-size: 2.5rem; text-shadow: 0 0 10px #00f2ff; margin: 0; }
-        input { width: 100%; padding: 15px; margin: 25px 0; background: #000; border: 1px solid #00f2ff; color: #fff; text-align: center; font-size: 1.5rem; border-radius: 10px; outline: none; }
-        .btn { width: 100%; padding: 15px; background: #00f2ff; color: #000; border: none; font-weight: bold; cursor: pointer; border-radius: 10px; font-size: 1.1rem; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; }
-        .earth { font-size: 100px; animation: spin 1s linear infinite; }
-        @keyframes spin { 100% { transform: rotateY(360deg); } }
+        :root { --accent: #ffb700; --glass: rgba(255, 255, 255, 0.1); }
+        body {
+            margin: 0; padding: 0; height: 100vh; display: flex; justify-content: center; align-items: center;
+            background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2070') no-repeat center center/cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        /* تأثير الزجاج الشفاف */
+        .glass-panel {
+            background: var(--glass); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 40px;
+            padding: 50px 30px; width: 90%; max-width: 420px; text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        h1 {
+            font-size: 3.2rem; color: #fff; margin: 0; font-weight: 900;
+            text-shadow: 2px 2px 15px rgba(255, 183, 0, 0.5); letter-spacing: -1px;
+        }
+        input {
+            width: 85%; padding: 18px; margin: 35px 0; border-radius: 15px; border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(0,0,0,0.3); color: var(--accent); font-size: 1.4rem; text-align: center; outline: none;
+        }
+        .btn-action {
+            width: 90%; padding: 18px; border-radius: 15px; border: none;
+            background: linear-gradient(135deg, #ffb700, #ff8800); color: #000;
+            font-weight: 900; font-size: 1.2rem; cursor: pointer; transition: 0.3s;
+        }
+        /* الشاشات المنبثقة الأنيقة */
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); display: none; flex-direction: column;
+            justify-content: center; align-items: center; z-index: 1000;
+        }
+        .pop-card {
+            background: linear-gradient(145deg, #1a1a1a, #000); padding: 40px;
+            border-radius: 30px; border: 2px solid var(--accent); text-align: center;
+            box-shadow: 0 0 40px var(--accent); max-width: 80%;
+        }
+        .earth-fast { font-size: 100px; animation: fastSpin 0.5s linear infinite; }
+        @keyframes fastSpin { 100% { transform: rotate(360deg); } }
+
+        .advice { margin-top: 35px; color: #fff; font-size: 0.95rem; opacity: 0.8; }
+        .footer-text { margin-top: 10px; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>الهاشمي سوفت</h1>
-        <input type="text" id="c" placeholder="كود الكرت" inputmode="numeric">
-        <button class="btn" onclick="v()">دخول</button>
+
+    <div class="glass-panel">
+        <div style="font-size: 0.7rem; color: var(--accent); margin-bottom: 5px;">ADVANCED TECH INTERFACE</div>
+        <h1>شبكة الهاشمي</h1>
+        <input type="text" id="cardInput" placeholder="أدخل كود الكرت" inputmode="numeric">
+        <button class="btn-action" onclick="checkCard()">بدء المزامنة</button>
+        
+        <div class="advice">﴿وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا﴾</div>
+        <div class="footer-text">DESIGNED BY AL-HASHIMI</div>
     </div>
-    <div id="s" class="overlay"><div class="earth">🌍</div><h2 style="color:#00f2ff">تم الاتصال بنجاح</h2></div>
-    <div id="e" class="overlay" onclick="this.style.display='none'"><h2 style="color:#ff0055">❌ الكرت خطأ</h2><p>اضغط للعودة</p></div>
+
+    <div id="successBox" class="overlay">
+        <div class="pop-card">
+            <div class="earth-fast">🌍</div>
+            <h2 style="color: var(--accent);">تم تسجيل الدخول بنجاح</h2>
+            <p style="color: #fff;">نتمنى لكم وقتاً ممتعاً 🌹✨</p>
+        </div>
+    </div>
+
+    <div id="errorBox" class="overlay" onclick="this.style.display='none'">
+        <div class="pop-card" style="border-color: #ff4b2b; box-shadow: 0 0 40px #ff4b2b;">
+            <div style="font-size: 60px;">🫣</div>
+            <h2 style="color: #ff4b2b;">نأسف.. الكرت خطأ</h2>
+            <p style="color: #ccc;">يرجى التأكد من الكود والمحاولة مرة أخرى</p>
+            <small style="color: #666;">اضغط في أي مكان للعودة</small>
+        </div>
+    </div>
+
     <script>
-        function v(){
-            var x=document.getElementById('c').value;
-            if(x==="225588"){document.getElementById('s').style.display='flex';}
-            else{document.getElementById('e').style.display='flex';}
+        function checkCard() {
+            const val = document.getElementById('cardInput').value;
+            if(val === "225588") {
+                document.getElementById('successBox').style.display = 'flex';
+                setTimeout(() => { location.reload(); }, 4000);
+            } else {
+                document.getElementById('errorBox').style.display = 'flex';
+            }
         }
     </script>
 </body>
