@@ -1,64 +1,52 @@
-<!<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الهاشمي سوفت - المستقبل بين يديك</title>
+    <title>شبكه الهاشمي سوفت - الذكاء التقني </title>
     <style>
         :root { --accent: #ffb700; --glass: rgba(255, 255, 255, 0.1); }
         body {
             margin: 0; padding: 0; height: 100vh; display: flex; justify-content: center; align-items: center;
             background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2070') no-repeat center center/cover;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: sans-serif; overflow: hidden;
         }
-        /* تأثير الزجاج الشفاف */
         .glass-panel {
             background: var(--glass); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 40px;
-            padding: 50px 30px; width: 90%; max-width: 420px; text-align: center;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            padding: 50px 30px; width: 90%; max-width: 400px; text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5); position: relative;
         }
-        h1 {
-            font-size: 3.2rem; color: #fff; margin: 0; font-weight: 900;
-            text-shadow: 2px 2px 15px rgba(255, 183, 0, 0.5); letter-spacing: -1px;
-        }
+        h1 { font-size: 2.8rem; color: #fff; margin: 0; text-shadow: 0 0 15px var(--accent); }
         input {
-            width: 85%; padding: 18px; margin: 35px 0; border-radius: 15px; border: 1px solid rgba(255,255,255,0.3);
-            background: rgba(0,0,0,0.3); color: var(--accent); font-size: 1.4rem; text-align: center; outline: none;
+            width: 85%; padding: 18px; margin: 30px 0; border-radius: 15px; border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(0,0,0,0.4); color: var(--accent); font-size: 1.4rem; text-align: center; outline: none;
         }
         .btn-action {
             width: 90%; padding: 18px; border-radius: 15px; border: none;
             background: linear-gradient(135deg, #ffb700, #ff8800); color: #000;
-            font-weight: 900; font-size: 1.2rem; cursor: pointer; transition: 0.3s;
+            font-weight: bold; font-size: 1.2rem; cursor: pointer;
         }
-        /* الشاشات المنبثقة الأنيقة */
         .overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9); display: none; flex-direction: column;
+            background: rgba(0,0,0,0.95); display: none; flex-direction: column;
             justify-content: center; align-items: center; z-index: 1000;
         }
         .pop-card {
-            background: linear-gradient(145deg, #1a1a1a, #000); padding: 40px;
-            border-radius: 30px; border: 2px solid var(--accent); text-align: center;
-            box-shadow: 0 0 40px var(--accent); max-width: 80%;
+            background: #111; padding: 40px; border-radius: 30px; 
+            border: 2px solid var(--accent); text-align: center; box-shadow: 0 0 40px var(--accent);
         }
-        .earth-fast { font-size: 100px; animation: fastSpin 0.5s linear infinite; }
+        .earth-fast { font-size: 100px; animation: fastSpin 0.5s linear infinite; margin-bottom: 20px; }
         @keyframes fastSpin { 100% { transform: rotate(360deg); } }
-
-        .advice { margin-top: 35px; color: #fff; font-size: 0.95rem; opacity: 0.8; }
-        .footer-text { margin-top: 10px; color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
     <div class="glass-panel">
-        <div style="font-size: 0.7rem; color: var(--accent); margin-bottom: 5px;">ADVANCED TECH INTERFACE</div>
         <h1>شبكة الهاشمي</h1>
-        <input type="text" id="cardInput" placeholder="أدخل كود الكرت" inputmode="numeric">
-        <button class="btn-action" onclick="checkCard()">بدء المزامنة</button>
-        
-        <div class="advice">﴿وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا﴾</div>
-        <div class="footer-text">DESIGNED BY AL-HASHIMI</div>
+        <input type="text" id="cardInput" placeholder="أدخل الكرت" inputmode="numeric">
+        <button class="btn-action" onclick="checkCard()">دخول النظام</button>
+        <p style="color: #fff; margin-top: 25px; opacity: 0.8;">﴿وَمَنْ يَتَّقِ اللَّهَ يَجْعَلْ لَهُ مَخْرَجًا﴾</p>
     </div>
 
     <div id="successBox" class="overlay">
@@ -70,22 +58,32 @@
     </div>
 
     <div id="errorBox" class="overlay" onclick="this.style.display='none'">
-        <div class="pop-card" style="border-color: #ff4b2b; box-shadow: 0 0 40px #ff4b2b;">
+        <div class="pop-card" style="border-color: #ff4b2b;">
             <div style="font-size: 60px;">🫣</div>
             <h2 style="color: #ff4b2b;">نأسف.. الكرت خطأ</h2>
-            <p style="color: #ccc;">يرجى التأكد من الكود والمحاولة مرة أخرى</p>
-            <small style="color: #666;">اضغط في أي مكان للعودة</small>
+            <p style="color: #ccc;">اضغط للعودة</p>
         </div>
     </div>
 
     <script>
         function checkCard() {
             const val = document.getElementById('cardInput').value;
+            const successBox = document.getElementById('successBox');
+            const errorBox = document.getElementById('errorBox');
+
             if(val === "225588") {
-                document.getElementById('successBox').style.display = 'flex';
-                setTimeout(() => { location.reload(); }, 4000);
+                // 1. إظهار شاشة النجاح والكرة الأرضية
+                successBox.style.display = 'flex';
+                
+                // 2. الانتظار لمدة 4 ثوانٍ (4000 ميلي ثانية) ثم الإخفاء
+                setTimeout(() => {
+                    successBox.style.display = 'none';
+                    // اختياري: مسح الخانة بعد النجاح
+                    document.getElementById('cardInput').value = '';
+                }, 4000);
+
             } else {
-                document.getElementById('errorBox').style.display = 'flex';
+                errorBox.style.display = 'flex';
             }
         }
     </script>
